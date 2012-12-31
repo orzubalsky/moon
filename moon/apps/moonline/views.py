@@ -1,10 +1,17 @@
-from django.shortcuts import render_to_response, get_object_or_404
-from django.template import RequestContext
-from django.http import HttpResponseRedirect, HttpResponse
-from django.core.urlresolvers import reverse
-from django.core import serializers
-from django.utils import simplejson as json
+from twilio.twiml import Response
+from django_twilio.decorators import twilio_view
 from moonline.models import *
 
-def index(request):
-    pass
+
+@twilio_view
+def answer(request):
+    r = Response()
+    r.say('Thanks for calling the moon line.')
+    return r
+    
+
+@twilio_view
+def read(request):
+    r = Response()
+    r.sms('Thanks for the SMS message!')
+    return r

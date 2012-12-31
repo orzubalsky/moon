@@ -83,7 +83,7 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'ff.urls'
+ROOT_URLCONF = 'moon.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -111,6 +111,7 @@ INSTALLED_APPS = (
     'django.contrib.gis',    
     'south',                        # intelligent schema and data migrations
     'pytz',                         # python timezone library
+    'django_twilio',                # 
     'moonline',                     # 
 )
 
