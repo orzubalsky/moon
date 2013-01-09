@@ -38,3 +38,12 @@ class Story(Base):
         
     days = ManyToManyField(MoonDay)
     content = TextField()
+
+    def short_content(self):
+        return self.content[:140] + '..'
+        
+    def on_days(self):
+        days = ""
+        for day in self.days.all():
+            days += day.day + ", "
+        return days
