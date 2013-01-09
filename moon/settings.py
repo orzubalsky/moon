@@ -93,6 +93,10 @@ TEMPLATE_DIRS = (
     PROJECT_DIR + '/templates',
 )
 
+FIXTURE_DIRS = (
+   PROJECT_DIR + '/apps/moonline/fixtures',   
+)
+
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
 MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
