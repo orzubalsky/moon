@@ -7,12 +7,17 @@ from moonline.models import *
 
 @twilio_view
 def answer(request):
+    moon = moon_over_location()
+    moon_age = moon['moon_phase']['ageOfMoon']
+    story = Story.objects.filter(days=moon_age)[0]
+    
     r = Response()
     r.say('Thanks for calling the moon line.')
-    
-    print request
+    r.say('The moon is %s days old tonight. This reminds me of a story.' % moon_age)
+    r.say(story.content)
+
     return r
-    
+
 
 @twilio_view
 def read(request):
