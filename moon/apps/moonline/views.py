@@ -9,7 +9,7 @@ from moonline.models import *
 def answer(request):
     moon = moon_over_location()
     moon_age = moon['moon_phase']['ageOfMoon']
-    story = Story.objects.filter(days=moon_age)[0]
+    story = Story.objects.filter(days__day=moon_age)[0]
     
     r = Response()
     r.say('Thanks for calling the moon line.')
