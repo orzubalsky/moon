@@ -20,11 +20,11 @@ def answer(request):
     r = Response()
     r.say('Thanks for calling the moon line.')
     
-    if now > sunset_time:
-        r.say('The moon is %s days old tonight. This reminds me of a story.' % moon_age)
-        r.say(story.content)
-    else:
-        r.say('The sun did not set yet. Please call again at night time.')        
+    #if now > sunset_time:
+    r.say('The moon is %s days old tonight. This reminds me of a story.' % moon_age)
+    r.say(story.content)
+    #else:
+    #r.say('The sun did not set yet. Please call again at night time.')        
 
     return r
 
